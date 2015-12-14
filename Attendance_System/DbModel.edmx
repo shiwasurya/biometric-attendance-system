@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="InterNICModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="fn_GetUserInOut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="fpdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_CancelLeave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="leaveId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetBirthdayList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getDateInOutDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fpdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="sp_getDesignation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="desigId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getHolidays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getLeaves" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="leaveId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetMonthlyReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_GetUserForDisplay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetUserFP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getUserInOutDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_MarkLeave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="ctdate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_RemoveDesignation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="desigID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_RemoveHoliday" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="recId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_SaveDesignation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="desigId" Type="int" Mode="In" />
+          <Parameter Name="desigName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_SaveHolidays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="title" Type="varchar" Mode="In" />
+          <Parameter Name="fromdate" Type="datetime" Mode="In" />
+          <Parameter Name="todate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_SaveUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="fullName" Type="varchar" Mode="In" />
+          <Parameter Name="designation" Type="varchar" Mode="In" />
+          <Parameter Name="joiningdate" Type="datetime" Mode="In" />
+          <Parameter Name="birthdate" Type="datetime" Mode="In" />
+          <Parameter Name="isAdmin" Type="int" Mode="In" />
+          <Parameter Name="mobileNO" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_saveUserLeave" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+          <Parameter Name="fromdate" Type="date" Mode="In" />
+          <Parameter Name="todate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="sp_SubmitPresence" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateUserFP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="FPData" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="strthumb" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="InterNICModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InterNICModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InterNICEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_CancelLeave">
+            <Parameter Name="leaveId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_DeleteUser">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GetBirthdayList" ReturnType="Collection(InterNICModel.sp_GetBirthdayList_Result)" >
+          </FunctionImport>
+          <FunctionImport Name="sp_getDateInOutDetails" ReturnType="Collection(InterNICModel.sp_getDateInOutDetails_Result)">
+            <Parameter Name="fpdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDesignation" ReturnType="Collection(InterNICModel.sp_getDesignation_Result)">
+            <Parameter Name="desigId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getHolidays" ReturnType="Collection(InterNICModel.sp_getHolidays_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getLeaves" ReturnType="Collection(InterNICModel.sp_getLeaves_Result)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="leaveId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GetMonthlyReport" ReturnType="Collection(InterNICModel.sp_GetMonthlyReport_Result)">
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GetNotification" ReturnType="Collection(InterNICModel.sp_GetNotification_Result)" >
+          </FunctionImport>
+          <FunctionImport Name="sp_GetUserForDisplay" ReturnType="Collection(InterNICModel.sp_GetUserForDisplay_Result)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GetUserFP" ReturnType="Collection(InterNICModel.sp_GetUserFP_Result)" >
+          </FunctionImport>
+          <FunctionImport Name="sp_getUserInOutDetails" ReturnType="Collection(InterNICModel.sp_getUserInOutDetails_Result)">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_MarkLeave">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="ctdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RemoveDesignation">
+            <Parameter Name="desigID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RemoveHoliday">
+            <Parameter Name="recId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SaveDesignation">
+            <Parameter Name="desigId" Mode="In" Type="Int32" />
+            <Parameter Name="desigName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SaveHolidays">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="title" Mode="In" Type="String" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SaveUserDetails">
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="fullName" Mode="In" Type="String" />
+            <Parameter Name="designation" Mode="In" Type="String" />
+            <Parameter Name="joiningdate" Mode="In" Type="DateTime" />
+            <Parameter Name="birthdate" Mode="In" Type="DateTime" />
+            <Parameter Name="isAdmin" Mode="In" Type="Int32" />
+            <Parameter Name="mobileNO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_saveUserLeave">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+            <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+            <Parameter Name="todate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SubmitPresence">
+            <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateUserFP">
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="FPData" Mode="In" Type="Binary" />
+            <Parameter Name="strthumb" Mode="In" Type="Binary" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_GetBirthdayList_Result">
+          <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_getDateInOutDetails_Result">
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="Int64" Name="SlNo" Nullable="true" />
+          <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Time_Slots" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getDesignation_Result">
+          <Property Type="Int32" Name="desigID" Nullable="false" />
+          <Property Type="String" Name="desigName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_getHolidays_Result">
+          <Property Type="Int32" Name="recId" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="true" MaxLength="150" />
+          <Property Type="DateTime" Name="dtfrom" Nullable="true" />
+          <Property Type="DateTime" Name="dtTo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getLeaves_Result">
+          <Property Type="Int32" Name="leaveId" Nullable="false" />
+          <Property Type="Int32" Name="userId" Nullable="true" />
+          <Property Type="DateTime" Name="fromdate" Nullable="true" />
+          <Property Type="DateTime" Name="todate" Nullable="true" />
+          <Property Type="DateTime" Name="addedOn" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="isCancelled" Nullable="true" />
+          <Property Type="DateTime" Name="cancelledOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_GetMonthlyReport_Result">
+          <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Designation" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Present_Days_Count" Nullable="true" />
+          <Property Type="Int32" Name="No_Of_Leave" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_GetNotification_Result">
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="officeTime" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="lastPunch" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="timeElapse" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_GetUserForDisplay_Result">
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+          <Property Type="DateTime" Name="birthdate" Nullable="true" />
+          <Property Type="String" Name="Role" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="mobileNo" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_GetUserFP_Result">
+          <Property Type="Int32" Name="userID" Nullable="false" />
+          <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+          <Property Type="String" Name="officeTime" Nullable="true" MaxLength="20" />
+          <Property Type="Binary" Name="thumb_img" Nullable="true" />
+          <Property Type="Binary" Name="thumb_raw" Nullable="true" />
+          <Property Type="Boolean" Name="isActive" Nullable="true" />
+          <Property Type="String" Name="mailId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="reportingMailID" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="birthdate" Nullable="true" />
+          <Property Type="Boolean" Name="isAdmin" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getUserInOutDetails_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time_Slot" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InterNICModelStoreContainer" CdmEntityContainer="InterNICEntities" >
+          <FunctionImportMapping FunctionImportName="sp_CancelLeave" FunctionName="InterNICModel.Store.sp_CancelLeave" />
+          <FunctionImportMapping FunctionImportName="sp_DeleteUser" FunctionName="InterNICModel.Store.sp_DeleteUser" />
+          <FunctionImportMapping FunctionImportName="sp_GetBirthdayList" FunctionName="InterNICModel.Store.sp_GetBirthdayList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_GetBirthdayList_Result">
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDateInOutDetails" FunctionName="InterNICModel.Store.sp_getDateInOutDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_getDateInOutDetails_Result">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="Time_Slots" ColumnName="Time_Slots" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDesignation" FunctionName="InterNICModel.Store.sp_getDesignation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_getDesignation_Result">
+                <ScalarProperty Name="desigID" ColumnName="desigID" />
+                <ScalarProperty Name="desigName" ColumnName="desigName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getHolidays" FunctionName="InterNICModel.Store.sp_getHolidays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_getHolidays_Result">
+                <ScalarProperty Name="recId" ColumnName="recId" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="dtfrom" ColumnName="dtfrom" />
+                <ScalarProperty Name="dtTo" ColumnName="dtTo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getLeaves" FunctionName="InterNICModel.Store.sp_getLeaves">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_getLeaves_Result">
+                <ScalarProperty Name="leaveId" ColumnName="leaveId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+                <ScalarProperty Name="todate" ColumnName="todate" />
+                <ScalarProperty Name="addedOn" ColumnName="addedOn" />
+                <ScalarProperty Name="isCancelled" ColumnName="isCancelled" />
+                <ScalarProperty Name="cancelledOn" ColumnName="cancelledOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetMonthlyReport" FunctionName="InterNICModel.Store.sp_GetMonthlyReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_GetMonthlyReport_Result">
+                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Present_Days_Count" ColumnName="Present_Days_Count" />
+                <ScalarProperty Name="No_Of_Leave" ColumnName="No_Of_Leave" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetNotification" FunctionName="InterNICModel.Store.sp_GetNotification">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_GetNotification_Result">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+                <ScalarProperty Name="lastPunch" ColumnName="lastPunch" />
+                <ScalarProperty Name="timeElapse" ColumnName="timeElapse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetUserForDisplay" FunctionName="InterNICModel.Store.sp_GetUserForDisplay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_GetUserForDisplay_Result">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetUserFP" FunctionName="InterNICModel.Store.sp_GetUserFP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_GetUserFP_Result">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+                <ScalarProperty Name="thumb_img" ColumnName="thumb_img" />
+                <ScalarProperty Name="thumb_raw" ColumnName="thumb_raw" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="mailId" ColumnName="mailId" />
+                <ScalarProperty Name="reportingMailID" ColumnName="reportingMailID" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getUserInOutDetails" FunctionName="InterNICModel.Store.sp_getUserInOutDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InterNICModel.sp_getUserInOutDetails_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time_Slot" ColumnName="Time_Slot" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_MarkLeave" FunctionName="InterNICModel.Store.sp_MarkLeave" />
+          <FunctionImportMapping FunctionImportName="sp_RemoveDesignation" FunctionName="InterNICModel.Store.sp_RemoveDesignation" />
+          <FunctionImportMapping FunctionImportName="sp_RemoveHoliday" FunctionName="InterNICModel.Store.sp_RemoveHoliday" />
+          <FunctionImportMapping FunctionImportName="sp_SaveDesignation" FunctionName="InterNICModel.Store.sp_SaveDesignation" />
+          <FunctionImportMapping FunctionImportName="sp_SaveHolidays" FunctionName="InterNICModel.Store.sp_SaveHolidays" />
+          <FunctionImportMapping FunctionImportName="sp_SaveUserDetails" FunctionName="InterNICModel.Store.sp_SaveUserDetails" />
+          <FunctionImportMapping FunctionImportName="sp_saveUserLeave" FunctionName="InterNICModel.Store.sp_saveUserLeave" />
+          <FunctionImportMapping FunctionImportName="sp_SubmitPresence" FunctionName="InterNICModel.Store.sp_SubmitPresence" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateUserFP" FunctionName="InterNICModel.Store.sp_UpdateUserFP" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

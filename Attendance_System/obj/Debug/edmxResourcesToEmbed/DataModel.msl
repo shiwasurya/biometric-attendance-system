@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InterNICModelStoreContainer" CdmEntityContainer="InterNICEntities">
+    <FunctionImportMapping FunctionImportName="sp_UpdateUserFP" FunctionName="InterNICModel.Store.sp_UpdateUserFP" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteUser" FunctionName="InterNICModel.Store.sp_DeleteUser" />
+    <FunctionImportMapping FunctionImportName="sp_SubmitPresence" FunctionName="InterNICModel.Store.sp_SubmitPresence" />
+    <FunctionImportMapping FunctionImportName="sp_GetNotification" FunctionName="InterNICModel.Store.sp_GetNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_GetNotification_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+          <ScalarProperty Name="lastPunch" ColumnName="lastPunch" />
+          <ScalarProperty Name="timeElapse" ColumnName="timeElapse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MarkLeave" FunctionName="InterNICModel.Store.sp_MarkLeave" />
+    <FunctionImportMapping FunctionImportName="sp_getHolidays" FunctionName="InterNICModel.Store.sp_getHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_getHolidays_Result">
+          <ScalarProperty Name="recId" ColumnName="recId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="dtfrom" ColumnName="dtfrom" />
+          <ScalarProperty Name="dtTo" ColumnName="dtTo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SaveHolidays" FunctionName="InterNICModel.Store.sp_SaveHolidays" />
+    <FunctionImportMapping FunctionImportName="sp_RemoveHoliday" FunctionName="InterNICModel.Store.sp_RemoveHoliday" />
+    <FunctionImportMapping FunctionImportName="sp_GetUserFP" FunctionName="InterNICModel.Store.sp_GetUserFP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_GetUserFP_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+          <ScalarProperty Name="thumb_img" ColumnName="thumb_img" />
+          <ScalarProperty Name="thumb_raw" ColumnName="thumb_raw" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="reportingMailID" ColumnName="reportingMailID" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetBirthdayList" FunctionName="InterNICModel.Store.sp_GetBirthdayList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_GetBirthdayList_Result">
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDesignation" FunctionName="InterNICModel.Store.sp_getDesignation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_getDesignation_Result">
+          <ScalarProperty Name="desigID" ColumnName="desigID" />
+          <ScalarProperty Name="desigName" ColumnName="desigName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SaveDesignation" FunctionName="InterNICModel.Store.sp_SaveDesignation" />
+    <FunctionImportMapping FunctionImportName="sp_RemoveDesignation" FunctionName="InterNICModel.Store.sp_RemoveDesignation" />
+    <FunctionImportMapping FunctionImportName="sp_getDateInOutDetails" FunctionName="InterNICModel.Store.sp_getDateInOutDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_getDateInOutDetails_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Time_Slots" ColumnName="Time_Slots" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getUserInOutDetails" FunctionName="InterNICModel.Store.sp_getUserInOutDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_getUserInOutDetails_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time_Slot" ColumnName="Time_Slot" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserForDisplay" FunctionName="InterNICModel.Store.sp_GetUserForDisplay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_GetUserForDisplay_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SaveUserDetails" FunctionName="InterNICModel.Store.sp_SaveUserDetails" />
+    <FunctionImportMapping FunctionImportName="sp_saveUserLeave" FunctionName="InterNICModel.Store.sp_saveUserLeave" />
+    <FunctionImportMapping FunctionImportName="sp_getLeaves" FunctionName="InterNICModel.Store.sp_getLeaves">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_getLeaves_Result">
+          <ScalarProperty Name="leaveId" ColumnName="leaveId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+          <ScalarProperty Name="todate" ColumnName="todate" />
+          <ScalarProperty Name="addedOn" ColumnName="addedOn" />
+          <ScalarProperty Name="isCancelled" ColumnName="isCancelled" />
+          <ScalarProperty Name="cancelledOn" ColumnName="cancelledOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CancelLeave" FunctionName="InterNICModel.Store.sp_CancelLeave" />
+    <FunctionImportMapping FunctionImportName="sp_GetMonthlyReport" FunctionName="InterNICModel.Store.sp_GetMonthlyReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InterNICModel.sp_GetMonthlyReport_Result">
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Present_Days_Count" ColumnName="Present_Days_Count" />
+          <ScalarProperty Name="No_Of_Leave" ColumnName="No_Of_Leave" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

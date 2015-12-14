@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="DbDataModel" />
+  <Alias Key="Target" Value="DbDataModel.Store" />
+  <EntityContainerMapping CdmEntityContainer="DbDataModelContainer" StorageEntityContainer="DbDataModelStoreContainer">
+    <FunctionImportMapping FunctionImportName="sp_CancelLeave" FunctionName="DbDataModel.Store.sp_CancelLeave" />
+    <FunctionImportMapping FunctionImportName="sp_DeleteUser" FunctionName="DbDataModel.Store.sp_DeleteUser" />
+    <FunctionImportMapping FunctionImportName="sp_GetBirthdayList" FunctionName="DbDataModel.Store.sp_GetBirthdayList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_GetBirthdayList_Result">
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDateInOutDetails" FunctionName="DbDataModel.Store.sp_getDateInOutDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_getDateInOutDetails_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="SlNo" ColumnName="SlNo" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Time_Slots" ColumnName="Time_Slots" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDesignation" FunctionName="DbDataModel.Store.sp_getDesignation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_getDesignation_Result">
+          <ScalarProperty Name="desigID" ColumnName="desigID" />
+          <ScalarProperty Name="desigName" ColumnName="desigName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getHolidays" FunctionName="DbDataModel.Store.sp_getHolidays">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_getHolidays_Result">
+          <ScalarProperty Name="recId" ColumnName="recId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="dtfrom" ColumnName="dtfrom" />
+          <ScalarProperty Name="dtTo" ColumnName="dtTo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getHourlyReport" FunctionName="DbDataModel.Store.sp_getHourlyReport" />
+    <FunctionImportMapping FunctionImportName="sp_getLeaves" FunctionName="DbDataModel.Store.sp_getLeaves">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_getLeaves_Result">
+          <ScalarProperty Name="leaveId" ColumnName="leaveId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="fromdate" ColumnName="fromdate" />
+          <ScalarProperty Name="todate" ColumnName="todate" />
+          <ScalarProperty Name="addedOn" ColumnName="addedOn" />
+          <ScalarProperty Name="isCancelled" ColumnName="isCancelled" />
+          <ScalarProperty Name="cancelledOn" ColumnName="cancelledOn" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetNotification" FunctionName="DbDataModel.Store.sp_GetNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_GetNotification_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+          <ScalarProperty Name="lastPunch" ColumnName="lastPunch" />
+          <ScalarProperty Name="timeElapse" ColumnName="timeElapse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserForDisplay" FunctionName="DbDataModel.Store.sp_GetUserForDisplay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_GetUserForDisplay_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetUserFP" FunctionName="DbDataModel.Store.sp_GetUserFP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_GetUserFP_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="officeTime" ColumnName="officeTime" />
+          <ScalarProperty Name="thumb_img" ColumnName="thumb_img" />
+          <ScalarProperty Name="thumb_raw" ColumnName="thumb_raw" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="reportingMailID" ColumnName="reportingMailID" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getUserInOutDetails" FunctionName="DbDataModel.Store.sp_getUserInOutDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbDataModel.sp_getUserInOutDetails_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time_Slot" ColumnName="Time_Slot" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MarkLeave" FunctionName="DbDataModel.Store.sp_MarkLeave" />
+    <FunctionImportMapping FunctionImportName="sp_RemoveDesignation" FunctionName="DbDataModel.Store.sp_RemoveDesignation" />
+    <FunctionImportMapping FunctionImportName="sp_RemoveHoliday" FunctionName="DbDataModel.Store.sp_RemoveHoliday" />
+    <FunctionImportMapping FunctionImportName="sp_SaveDesignation" FunctionName="DbDataModel.Store.sp_SaveDesignation" />
+    <FunctionImportMapping FunctionImportName="sp_SaveHolidays" FunctionName="DbDataModel.Store.sp_SaveHolidays" />
+    <FunctionImportMapping FunctionImportName="sp_SaveUserDetails" FunctionName="DbDataModel.Store.sp_SaveUserDetails" />
+    <FunctionImportMapping FunctionImportName="sp_saveUserLeave" FunctionName="DbDataModel.Store.sp_saveUserLeave" />
+    <FunctionImportMapping FunctionImportName="sp_SubmitPresence" FunctionName="DbDataModel.Store.sp_SubmitPresence" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateUserFP" FunctionName="DbDataModel.Store.sp_UpdateUserFP" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterNICModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="InterNICEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_UpdateUserFP">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+      <Parameter Name="FPData" Mode="In" Type="Binary" />
+      <Parameter Name="strthumb" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_DeleteUser">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SubmitPresence">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetNotification" ReturnType="Collection(InterNICModel.sp_GetNotification_Result)" />
+    <FunctionImport Name="sp_MarkLeave">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="ctdate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getHolidays" ReturnType="Collection(InterNICModel.sp_getHolidays_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SaveHolidays">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="title" Mode="In" Type="String" />
+      <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+      <Parameter Name="todate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RemoveHoliday">
+      <Parameter Name="recId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserFP" ReturnType="Collection(InterNICModel.sp_GetUserFP_Result)" />
+    <FunctionImport Name="sp_GetBirthdayList" ReturnType="Collection(InterNICModel.sp_GetBirthdayList_Result)" />
+    <FunctionImport Name="sp_getDesignation" ReturnType="Collection(InterNICModel.sp_getDesignation_Result)">
+      <Parameter Name="desigId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SaveDesignation">
+      <Parameter Name="desigId" Mode="In" Type="Int32" />
+      <Parameter Name="desigName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_RemoveDesignation">
+      <Parameter Name="desigID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getDateInOutDetails" ReturnType="Collection(InterNICModel.sp_getDateInOutDetails_Result)">
+      <Parameter Name="fpdate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getUserInOutDetails" ReturnType="Collection(InterNICModel.sp_getUserInOutDetails_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetUserForDisplay" ReturnType="Collection(InterNICModel.sp_GetUserForDisplay_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SaveUserDetails">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+      <Parameter Name="fullName" Mode="In" Type="String" />
+      <Parameter Name="designation" Mode="In" Type="String" />
+      <Parameter Name="joiningdate" Mode="In" Type="DateTime" />
+      <Parameter Name="birthdate" Mode="In" Type="DateTime" />
+      <Parameter Name="isAdmin" Mode="In" Type="Int32" />
+      <Parameter Name="mobileNO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_saveUserLeave">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="fromdate" Mode="In" Type="DateTime" />
+      <Parameter Name="todate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getLeaves" ReturnType="Collection(InterNICModel.sp_getLeaves_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+      <Parameter Name="leaveId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CancelLeave">
+      <Parameter Name="leaveId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_GetMonthlyReport" ReturnType="Collection(InterNICModel.sp_GetMonthlyReport_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_GetNotification_Result">
+    <Property Type="Int32" Name="userID" Nullable="true" />
+    <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="officeTime" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="lastPunch" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="timeElapse" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getHolidays_Result">
+    <Property Type="Int32" Name="recId" Nullable="false" />
+    <Property Type="String" Name="title" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="dtfrom" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dtTo" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserFP_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="String" Name="officeTime" Nullable="true" MaxLength="20" />
+    <Property Type="Binary" Name="thumb_img" Nullable="true" />
+    <Property Type="Binary" Name="thumb_raw" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="mailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reportingMailID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="birthdate" Nullable="true" />
+    <Property Type="Boolean" Name="isAdmin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_GetBirthdayList_Result">
+    <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getDesignation_Result">
+    <Property Type="Int32" Name="desigID" Nullable="false" />
+    <Property Type="String" Name="desigName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getDateInOutDetails_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="Int64" Name="SlNo" Nullable="true" />
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Time_Slots" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getUserInOutDetails_Result">
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+    <Property Type="String" Name="Time_Slot" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_GetUserForDisplay_Result">
+    <Property Type="Int32" Name="userID" Nullable="false" />
+    <Property Type="String" Name="fullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="designation" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="DateTime" Name="birthdate" Nullable="true" />
+    <Property Type="String" Name="Role" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="mobileNo" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getLeaves_Result">
+    <Property Type="Int32" Name="leaveId" Nullable="false" />
+    <Property Type="Int32" Name="userId" Nullable="true" />
+    <Property Type="DateTime" Name="fromdate" Nullable="true" />
+    <Property Type="DateTime" Name="todate" Nullable="true" />
+    <Property Type="DateTime" Name="addedOn" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isCancelled" Nullable="true" />
+    <Property Type="DateTime" Name="cancelledOn" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_GetMonthlyReport_Result">
+    <Property Type="String" Name="Full_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Present_Days_Count" Nullable="true" />
+    <Property Type="Int32" Name="No_Of_Leave" Nullable="true" />
+  </ComplexType>
+</Schema>

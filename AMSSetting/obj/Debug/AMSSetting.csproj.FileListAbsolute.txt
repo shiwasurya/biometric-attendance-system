@@ -1,0 +1,5 @@
+D:\_shiwanshu\Projects\Attendance_System\AMSSetting\bin\Debug\AMSSetting.dll
+D:\_shiwanshu\Projects\Attendance_System\AMSSetting\bin\Debug\AMSSetting.pdb
+D:\_shiwanshu\Projects\Attendance_System\AMSSetting\obj\Debug\AMSSetting.csprojResolveAssemblyReference.cache
+D:\_shiwanshu\Projects\Attendance_System\AMSSetting\obj\Debug\AMSSetting.dll
+D:\_shiwanshu\Projects\Attendance_System\AMSSetting\obj\Debug\AMSSetting.pdb
